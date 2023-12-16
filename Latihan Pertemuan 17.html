@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deret Bilangan Genap Habis Dibagi 3</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function generateSeries() {
+        // Minta pengguna memasukkan nilai awal dan akhir deret
+        const nilaiAwal = parseInt(prompt("Masukkan nilai awal deret:"));
+        const nilaiAkhir = parseInt(prompt("Masukkan nilai akhir deret:"));
+
+        let deret = "";
+        let jumlahBilangan = 0;
+        let jumlahNilai = 0;
+
+        // Generate dan tampilkan deret bilangan genap habis dibagi 3
+        for (let i = nilaiAwal; i <= nilaiAkhir; i++) {
+          if (i % 2 === 0 && i % 3 === 0) {
+            deret += i + " ";
+            jumlahBilangan++;
+            jumlahNilai += i;
+          }
+        }
+
+        // Tampilkan hasil di HTML
+        document.getElementById("output").innerHTML = `
+                <p>Nilai Awal: ${nilaiAwal}</p>
+                <p>Nilai Akhir: ${nilaiAkhir}</p>
+                <p>Deret yang tampil: ${deret}</p>
+                <p>Jumlah deret bilangan: ${jumlahBilangan} bilangan</p>
+                <p>Jumlah nilai bilangan tersebut: ${jumlahNilai}</p>
+            `;
+      }
+    </script>
+
+    <h2>Deret Bilangan Genap Habis Dibagi 3</h2>
+    <button onclick="generateSeries()">Generate Deret</button>
+    <div id="output"></div>
+  </body>
+</html>
